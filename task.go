@@ -1,4 +1,4 @@
-package cron
+package leo_cron
 
 import (
 	"context"
