@@ -1,4 +1,4 @@
-package leo_cron
+package cron
 
 import (
 	"fmt"
@@ -16,7 +16,7 @@ func NewLogger(l log.Logger) cron.Logger {
 }
 
 func (l *logger) Info(msg string, keysAndValues ...any) {
-	fs := []log.F{{K: "msg", V: msg}}
+	fs := []log.Field{log.F{K: "msg", V: msg}}
 	for i := 0; i < len(keysAndValues); i += 2 {
 		k := fmt.Sprint(keysAndValues[i])
 		v := fmt.Sprint(keysAndValues[i+1])
@@ -26,7 +26,7 @@ func (l *logger) Info(msg string, keysAndValues ...any) {
 }
 
 func (l *logger) Error(err error, msg string, keysAndValues ...any) {
-	fs := []log.F{{K: "msg", V: msg}, {K: "err", V: err}}
+	fs := []log.Field{log.F{K: "msg", V: msg}, log.F{K: "err", V: err}}
 	for i := 0; i < len(keysAndValues); i += 2 {
 		k := fmt.Sprint(keysAndValues[i])
 		v := fmt.Sprint(keysAndValues[i+1])

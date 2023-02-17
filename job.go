@@ -1,4 +1,4 @@
-package leo_cron
+package cron
 
 import (
 	"time"

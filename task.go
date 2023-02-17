@@ -1,4 +1,4 @@
-package leo_cron
+package cron
 
 import (
 	"context"
@@ -69,7 +69,7 @@ func (task *Task) Stop(_ context.Context) error {
 }
 
 func (task *Task) String() string {
-	return "cron task"
+	return "Cron task"
 }
 
 func (task *Task) Jobs() []*Job {
